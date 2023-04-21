@@ -29,4 +29,16 @@ public class Controller {
     public String vote(){
         return "vote";
     }
+    @RequestMapping(value = "/result", method = {RequestMethod.GET, RequestMethod.POST})
+    public String showHomsaePage(Model model, @RequestParam(required = false) String button) {
+        if (button != null && (button.equals("1") || button.equals("2"))) {
+            voteRepository.save(new Vote(button));
+        }
+        long vote1Count = voteRepository.countByButton("1");
+        long vote2Count = voteRepository.countByButton("2");
+        model.addAttribute("vote1Count", vote1Count);
+        model.addAttribute("vote2Count", vote2Count);
+        return "result";
+    }
+
 }

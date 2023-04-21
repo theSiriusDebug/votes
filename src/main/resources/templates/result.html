@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Результаты</title>
+  <title>Главная страница</title>
 </head>
 <body>
-<h1>Результаты</h1>
-<a th:text="${vote1Count}">Количество голосов за кнопку 1</a>
-<a th:text="${vote2Count}">Количество голосов за кнопку 2</a>
+<h1>Главная страница</h1>
+<p>Количество голосов за кнопку 1: <span th:text="${vote1Count}"></span></p>
+<p>Количество голосов за кнопку 2: <span th:text="${vote2Count}"></span></p>
 </body>
 </html>
