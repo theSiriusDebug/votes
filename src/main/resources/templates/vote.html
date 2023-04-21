@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Голосование</title>
+</head>
+<body>
+<h1>Голосование</h1>
+<p>Выберите одну из двух кнопок ниже и нажмите на нее:</p>
+<form method="get" th:action="@{/}">
+    <button type="submit" name="button" value="1">Кнопка 1</button>
+    <button type="submit" name="button" value="2">Кнопка 2</button>
+</form>
+<a>Количество голосов за кнопку 1: <span th:text="${vote1Count}"></span></a>
+<a>Количество голосов за кнопку 2: <span th:text="${vote2Count}"></span></a>
+</body>
+</html>
